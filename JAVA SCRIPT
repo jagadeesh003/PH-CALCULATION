@@ -1,0 +1,26 @@
+
+function checkPH() {
+
+    let ph = parseFloat(document.getElementById("phValue").value);
+    let result = document.getElementById("result");
+
+    if (isNaN(ph) || ph < 0 || ph > 14) {
+        result.innerHTML = "Please enter a valid pH value (0-14).";
+        result.style.color = "red";
+    }
+
+    else if (ph < 7) {
+        result.innerHTML = "Acidic Water ⚠️";
+        result.style.color = "orange";
+    }
+
+    else if (ph == 7) {
+        result.innerHTML = "Neutral Water ✅";
+        result.style.color = "green";
+    }
+
+    else {
+        result.innerHTML = "Alkaline Water 💧";
+        result.style.color = "blue";
+    }
+}
